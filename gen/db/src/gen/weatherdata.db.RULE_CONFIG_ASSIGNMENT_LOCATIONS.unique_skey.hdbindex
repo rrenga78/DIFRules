@@ -1,0 +1,1 @@
+UNIQUE INVERTED INDEX weatherdata_db_RULE_CONFIG_ASSIGNMENT_LOCATIONS_unique_skey ON weatherdata_db_RULE_CONFIG_ASSIGNMENT_LOCATIONS (Client, DIFConfig, DDF_Location)

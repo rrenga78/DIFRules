@@ -1,0 +1,1 @@
+UNIQUE INVERTED INDEX weatherdata_db_RULE_CONFIG_ASSIGNMENT_PRODUCT_NODES_unique_skey ON weatherdata_db_RULE_CONFIG_ASSIGNMENT_PRODUCT_NODES (Client, DIFConfig, DDF_Product_Hierarchy_Node)

@@ -1,0 +1,1 @@
+UNIQUE INVERTED INDEX weatherdata_db_RULE_CONFIG_AGGREGATIONS_unique_skey ON weatherdata_db_RULE_CONFIG_AGGREGATIONS (Client, DIFConfig, Measure)

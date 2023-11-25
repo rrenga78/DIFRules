@@ -1,0 +1,22 @@
+VIEW WeatherService_DiffRuleConfig AS SELECT
+  RULE_CONFIG_0.sKey,
+  RULE_CONFIG_0.Client,
+  RULE_CONFIG_0.Name,
+  RULE_CONFIG_0.Rule,
+  RULE_CONFIG_0.Disabled,
+  RULE_CONFIG_0.Granularity,
+  RULE_CONFIG_0.TimeShift,
+  RULE_CONFIG_0.PastHorizon,
+  RULE_CONFIG_0.FutureHorizon,
+  RULE_CONFIG_0.LocationHierarchyID,
+  RULE_CONFIG_0.ProductHierarchyID,
+  RULE_CONFIG_0.OrderChannelID,
+  RULE_CONFIG_0.SalesOrgID
+FROM weatherdata_db_RULE_CONFIG AS RULE_CONFIG_0
+WITH ASSOCIATIONS (
+  MANY TO MANY JOIN weatherdata_db_RULE_CONFIG_AGGREGATIONS AS Aggregations ON (Aggregations.DIFConfig = sKey),
+  MANY TO MANY JOIN WeatherService_DiffRuleLoc AS Locations ON (Locations.DIFConfig = sKey),
+  MANY TO MANY JOIN WeatherService_DiffRulesLocHR AS LocationNodes ON (LocationNodes.DIFConfig = sKey),
+  MANY TO MANY JOIN WeatherService_DiffRulesProd AS Products ON (Products.DIFConfig = sKey),
+  MANY TO MANY JOIN WeatherService_DiffRuleProdHR AS ProductNodes ON (ProductNodes.DIFConfig = sKey)
+)
